@@ -23,7 +23,7 @@ Both compiler enables `openmp` flag for Openmp programming. Configurations with 
  ```shell
 cd ~
 git clone git@github.com:YiyuanZhao/vscodeCompilerSettings.git
-cd RunAndDebug
+cd vscodeCompilerSettings
 ./install.sh
  ```
 
@@ -33,9 +33,9 @@ cd RunAndDebug
 
 Validation of this setup can be performed using helloworld code written in C/Fortran. Validation could be performed using following instruction"
 
- - Open proper file in `RunAndDebug/testing/baseTest` in VSCode. (e.g. `helloworld.c`)
+ - Open proper file in `vscodeCompilerSettings/testing/baseTest` in VSCode. (e.g. `helloworld.c`)
  - Select proper Launch item in VSCode `RunAndDebug` tab. (e.g. press `Ctrl + Shift + D` and then select `gcc run active file (Debug)`).
  - Add a breakpoint in the code. (e.g. at line 4).
  - Press `F5`.
  - Check whether the code is compiled and run properly. The execution should stop at breakpoint depending on your settings.
- - Open proper file in `RunAndDebug/testing/externLibLinkTest` in VSCode. (e.g. `lapacke_test.c`) and repeat validation procedure.
+ - Open proper file in `vscodeCompilerSettings/testing/externLibLinkTest` in VSCode. (e.g. `lapacke_test.c`) and repeat validation procedure.
