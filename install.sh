@@ -631,6 +631,162 @@ then
 EOF
 fi
 
+if [[ -n $(which icc) ]]
+then
+    cat >>launch.json <<EOF
+    {
+      "name": "icc run active file (Debug)",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "\${fileDirname}/\${fileBasenameNoExtension}",
+      "stopAtEntry": false,
+      "cwd": "\${fileDirname}",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "miDebuggerPath": "$(which gdb)",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ],
+      "preLaunchTask": "icc build active file (Debug)"
+    },
+EOF
+fi
+
+if [[ -n $(which icpc) ]]
+then
+    cat >>launch.json <<EOF
+    {
+      "name": "icpc run active file (Debug)",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "\${fileDirname}/\${fileBasenameNoExtension}",
+      "stopAtEntry": false,
+      "cwd": "\${fileDirname}",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "miDebuggerPath": "$(which gdb)",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ],
+      "preLaunchTask": "icpc build active file (Debug)"
+    },
+EOF
+fi
+
+if [[ -n $(which ifort) ]]
+then
+    cat >>launch.json <<EOF
+    {
+      "name": "ifort run active file (Debug)",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "\${fileDirname}/\${fileBasenameNoExtension}",
+      "stopAtEntry": false,
+      "cwd": "\${fileDirname}",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "miDebuggerPath": "$(which gdb)",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ],
+      "preLaunchTask": "ifort build active file (Debug)"
+    },
+EOF
+fi
+
+if [[ -n $(which icc) ]]
+then
+    cat >>launch.json <<EOF
+    {
+      "name": "icc run active file (Release)",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "\${fileDirname}/\${fileBasenameNoExtension}",
+      "stopAtEntry": false,
+      "cwd": "\${fileDirname}",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "miDebuggerPath": "$(which gdb)",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ],
+      "preLaunchTask": "icc build active file (Release)"
+    },
+EOF
+fi
+
+if [[ -n $(which icpc) ]]
+then
+    cat >>launch.json <<EOF
+    {
+      "name": "icpc run active file (Release)",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "\${fileDirname}/\${fileBasenameNoExtension}",
+      "stopAtEntry": false,
+      "cwd": "\${fileDirname}",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "miDebuggerPath": "$(which gdb)",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ],
+      "preLaunchTask": "icpc build active file (Release)"
+    },
+EOF
+fi
+
+if [[ -n $(which ifort) ]]
+then
+    cat >>launch.json <<EOF
+    {
+      "name": "ifort run active file (Release)",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "\${fileDirname}/\${fileBasenameNoExtension}",
+      "stopAtEntry": false,
+      "cwd": "\${fileDirname}",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "miDebuggerPath": "$(which gdb)",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ],
+      "preLaunchTask": "ifort build active file (Release)"
+    },
+EOF
+fi
+
 cat >>launch.json <<EOF
     {
       "name": "run from Makefile",
