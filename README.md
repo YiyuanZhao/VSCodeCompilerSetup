@@ -23,7 +23,7 @@ Both compiler enables `openmp` flag for Openmp programming. Configurations with 
  ```shell
 cd ~
 git clone https://github.com/YiyuanZhao/VSCodeCompilerSetup.git
-cd vscodeCompilerSettings
+cd VSCodeCompilerSetup
 ./install.sh
  ```
 
