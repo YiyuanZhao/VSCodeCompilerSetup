@@ -61,13 +61,21 @@ else
     installLAPACKE="Not found"
 fi
 
+if [[ -n $(which gdb) ]]
+then
+    installGdb=$(which gdb)
+else
+    installGdb="Not found"
+fi
+
 cat <<EOF
---------------------------------------------
-Checking BLAS and LAPACK
---------------------------------------------
-Checking BLAS:      $installBLAS
-Checking LAPACK:    $installLAPACK
-Checking LAPACKE:   $installLAPACKE
+-----------------------------------------------------------------
+Checking Linear Algebra Libraries (BLAS and LAPACK) and Debugger
+-----------------------------------------------------------------
+Checking BLAS:          $installBLAS
+Checking LAPACK:        $installLAPACK
+Checking LAPACKE:       $installLAPACKE
+Checking Debugger(gdb): $installGdb
 
 Checking Complete.
 The missing package will be installed.
@@ -94,6 +102,12 @@ if [[ $installLAPACKE = "Not found" ]]
 then
     echo "Executing: sudo apt install -y liblapacke-dev"
     sudo apt install -y liblapacke-dev
+fi
+
+if [[ $installGdb = "Not found" ]]
+then
+    echo "Executing: sudo apt install -y gdb"
+    sudo apt install -y gdb
 fi
 
 cat <<EOF
@@ -210,7 +224,6 @@ then
                 "\${file}",
                 "-o",
                 "\${fileDirname}/\${fileBasenameNoExtension}",
-                "-Wall",
                 "-O0",
                 "-mkl",
                 "-qopenmp"
@@ -235,7 +248,6 @@ then
                 "\${file}",
                 "-o",
                 "\${fileDirname}/\${fileBasenameNoExtension}",
-                "-Wall",
                 "-O0",
                 "-mkl",
                 "-qopenmp"
@@ -260,7 +272,6 @@ then
                 "\${file}",
                 "-o",
                 "\${fileDirname}/\${fileBasenameNoExtension}",
-                "-Wall",
                 "-O0",
                 "-mkl",
                 "-qopenmp"
@@ -418,7 +429,6 @@ then
                 "\${file}",
                 "-o",
                 "\${fileDirname}/\${fileBasenameNoExtension}",
-                "-Wall",
                 "-O2",
                 "-mkl",
                 "-qopenmp"
